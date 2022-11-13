@@ -14,9 +14,9 @@ class CoinRepositoryImpl implements CoinRepository {
   });
 
   @override
-  Future<Either<Failure, CoinDetailEntity>> getCoinDetails() async {
+  Future<Either<Failure, List<CoinEntity>>> getCoins() async {
     try {
-      final result = await coinRemoteDataSource.getCoinDetailFromApi();
+      final result = await coinRemoteDataSource.getCoinsFromApi();
       return right(result);
     } on ServerException catch (_) {
       return left(ServerFailure());
@@ -26,13 +26,14 @@ class CoinRepositoryImpl implements CoinRepository {
   }
 
   @override
-  Future<Either<Failure, List<CoinEntity>>> getCoins() async {
+  Future<Either<Failure, CoinDetailEntity>> getCoinDetailFromDataSource({required String coinId}) async {
     try {
-      final result = await coinRemoteDataSource.getCoinsFromApi();
+      final result = await coinRemoteDataSource.getCoinDetailFromApi(coinId: coinId);
       return right(result);
     } on ServerException catch (_) {
       return left(ServerFailure());
     } catch (e) {
+      // Handle the exception
       return left(GeneralFailure());
     }
   }

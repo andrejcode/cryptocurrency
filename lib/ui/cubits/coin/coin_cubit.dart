@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../domain/entities/coin_entity.dart';
-import '../../domain/usecases/get_coins.dart';
+import '../../../domain/entities/coin_entity.dart';
+import '../../../domain/usecases/get_coins.dart';
 
 part 'coin_state.dart';
 

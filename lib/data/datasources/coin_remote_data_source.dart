@@ -6,8 +6,7 @@ import '../models/coin_model.dart';
 
 abstract class CoinRemoteDataSource {
   Future<List<CoinModel>> getCoinsFromApi();
-
-  Future<CoinDetailModel> getCoinDetailFromApi();
+  Future<CoinDetailModel> getCoinDetailFromApi({required String coinId});
 }
 
 class CoinRemoteDataSourceImpl implements CoinRemoteDataSource {
@@ -29,9 +28,8 @@ class CoinRemoteDataSourceImpl implements CoinRemoteDataSource {
   }
 
   @override
-  Future<CoinDetailModel> getCoinDetailFromApi() async {
-    final response = await client
-        .get(Uri.parse('https://api.coinpaprika.com/v1/coins/btc-bitcoin'));
+  Future<CoinDetailModel> getCoinDetailFromApi({required String coinId}) async {
+    final response = await client.get(Uri.parse('https://api.coinpaprika.com/v1/coins/$coinId'));
 
     if (response.statusCode != 200) {
       throw ServerException();

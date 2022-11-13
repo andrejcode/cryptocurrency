@@ -1,4 +1,5 @@
-import 'package:cryptocurrency/ui/coin_page.dart';
+import 'package:cryptocurrency/ui/pages/coin_details_page.dart';
+import 'package:cryptocurrency/ui/pages/coin_page.dart';
 import 'package:flutter/material.dart';
 import 'injection.dart' as di;
 

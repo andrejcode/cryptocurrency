@@ -7,9 +7,11 @@ import '../repositories/coin_repository.dart';
 class GetCoinDetails {
   final CoinRepository coinRepository;
 
-  const GetCoinDetails({required this.coinRepository});
+  GetCoinDetails({
+    required this.coinRepository,
+  });
 
-  Future<Either<Failure, CoinDetailEntity>> call() async {
-    return coinRepository.getCoinDetails();
+  Future<Either<Failure, CoinDetailEntity>> call({required String coinId}) async {
+    return coinRepository.getCoinDetailFromDataSource(coinId: coinId);
   }
 }
