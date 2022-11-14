@@ -8,7 +8,7 @@ management.
 
 1. Clone the project to your local machine.
 2. Open the project using your favorite IDE/code editor (I recommend Android Studio).
-3. Type ```flutter run``` to run program
+3. Type ```flutter run``` in terminal to run program.
 
 ## Screenshots
 
