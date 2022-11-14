@@ -11,5 +11,5 @@ management.
 
 ## Screenshots
 
-<img src="./screenshots/screen_1.jpg" alt="Screenshot 1" width="400px" height="auto">
-<img src="./screenshots/screen_2.jpg" alt="Screenshot 2" width="400px" height="auto">
+<img src="./screenshots/screen_1.png" alt="Screenshot 1" width="400px" height="auto">
+<img src="./screenshots/screen_2.png" alt="Screenshot 2" width="400px" height="auto">
